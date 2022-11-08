@@ -1,10 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
   const [error, setError] = useState("");
   const { setLoading, createUser, updateUserProfile } = useContext(AuthContext);
+
+  useTitle("Sign Up");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,13 +23,13 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        // toast.success("Registration Successful!");
+        toast.success("Registration Successful!");
         handleUpdateUserProfile(name, photoURL);
       })
       .catch((e) => {
         console.error(e);
         setError(e.message);
-        // toast.error(e.message);
+        toast.error(e.message);
       })
       .finally(() => {
         setLoading(false);
@@ -46,7 +50,7 @@ const SignUp = () => {
     <div className="hero min-h-screen bg-base-100">
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
-          <h1 className="text-2xl  md:text-5xl my-2 font-bold">Please Register Here!</h1>
+          <h1 className="text-2xl  md:text-5xl my-2 font-bold">Please Sign Up Here!</h1>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
           <form onSubmit={handleSubmit} className="card-body">
@@ -76,7 +80,7 @@ const SignUp = () => {
               <label className="label text-warning">{error}</label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <button className="btn btn-primary">Sign Up</button>
             </div>
             <label className="label">
               <Link to="/login" className="label-text-alt link link-hover">

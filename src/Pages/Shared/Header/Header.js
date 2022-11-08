@@ -33,8 +33,8 @@ const Header = () => {
         </div>
         <Link className="btn btn-ghost" to="/">
           <img className=" rounded-xl w-8" src={logo} alt="" />
-          <span></span>
         </Link>
+        <span className="text-xl font-semibold">Food Fly</span>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
