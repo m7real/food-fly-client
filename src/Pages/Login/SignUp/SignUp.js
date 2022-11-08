@@ -1,12 +1,15 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
 import useTitle from "../../../hooks/useTitle";
 import toast from "react-hot-toast";
 
 const SignUp = () => {
   const [error, setError] = useState("");
-  const { setLoading, createUser, updateUserProfile } = useContext(AuthContext);
+  const { setLoading, createUser, updateUserProfile, signInWithGoogle, logOut } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   useTitle("Sign Up");
 
@@ -43,9 +46,33 @@ const SignUp = () => {
       photoURL: photoURL,
     };
     updateUserProfile(profile)
-      .then(() => {})
+      .then(() => {
+        toast.success("You will be redirected to the login page");
+        logOut()
+          .then(() => {
+            setTimeout(() => {
+              navigate("/login");
+            }, 1000);
+          })
+          .catch((e) => console.error(e));
+      })
       .catch((e) => console.error(e));
   };
+
+  // sign in with google
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   return (
     <div className="hero min-h-screen bg-base-100">
       <div className="hero-content flex-col">
@@ -82,6 +109,10 @@ const SignUp = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Sign Up</button>
             </div>
+            <button onClick={handleGoogleSignIn} type="button" className="btn btn-outline btn-ghost">
+              <FcGoogle />
+              <span className="ml-4">Sign In With Google</span>
+            </button>
             <label className="label">
               <Link to="/login" className="label-text-alt link link-hover">
                 Already have an account? <span className="text-success">Login Here</span>

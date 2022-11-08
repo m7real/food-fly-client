@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Dna } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
@@ -53,7 +54,7 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         {loading ? (
-          <button className="btn-ghost">...</button>
+          <Dna visible={true} height="48" width="48" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper" />
         ) : (
           <>
             {user?.uid ? (

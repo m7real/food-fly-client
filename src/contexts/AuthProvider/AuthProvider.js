@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
   };
 
   // login
-  const login = (email, password) => {
+  const logIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
@@ -68,7 +68,7 @@ const AuthProvider = ({ children }) => {
     setLoading,
     createUser,
     updateUserProfile,
-    login,
+    logIn,
     signInWithGoogle,
     logOut,
   };

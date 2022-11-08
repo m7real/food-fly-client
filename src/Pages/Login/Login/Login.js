@@ -3,12 +3,15 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { setLoading, signInWithGoogle, signIn } = useContext(AuthContext);
+  const { setLoading, signInWithGoogle, logIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+
+  useTitle("Log In");
 
   // getting the route to be redirected after login
   const from = location.state?.from?.pathname || "/";
@@ -19,9 +22,10 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     setError("");
-    signIn(email, password)
+    logIn(email, password)
       .then((result) => {
         const user = result.user;
+        console.log(user);
         form.reset();
         toast.success("Login Successful!");
         setError("");
@@ -73,7 +77,7 @@ const Login = () => {
               <label className="label text-warning">{error}</label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary normal-case">Log In</button>
             </div>
             <button onClick={handleGoogleSignIn} type="button" className="btn btn-outline btn-ghost">
               <FcGoogle />
