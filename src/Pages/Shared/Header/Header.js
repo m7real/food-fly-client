@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, loading, setLoading, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.error(err))
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   const menuItems = (
     <>
       <li>
@@ -40,12 +52,48 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login" className="btn btn-sm btn-outline">
-          Log In
-        </Link>
+        {loading ? (
+          <button className="btn-ghost">...</button>
+        ) : (
+          <>
+            {user?.uid ? (
+              <button onClick={handleLogOut} className="btn btn-sm btn-outline">
+                Log Out
+              </button>
+            ) : (
+              <Link to="/login" className="btn btn-sm btn-outline">
+                Log In
+              </Link>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
 };
 
 export default Header;
+
+//
+/*   {
+    loading ? (
+
+        <button className="btn-ghost">...</button>
+
+    ) : (
+      <>
+        {user?.uid ? (
+
+              <button onClick={handleLogOut} className="font-semibold">Log Out</button>
+  
+
+        ) : (
+
+            <Link to="/login" className="font-semibold">
+              Login
+            </Link>
+
+        )}
+      </>
+    );
+  } */
