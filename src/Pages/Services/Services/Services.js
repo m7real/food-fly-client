@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { Dna } from "react-loader-spinner";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import Spinner from "../../Others/Spinner/Spinner";
 

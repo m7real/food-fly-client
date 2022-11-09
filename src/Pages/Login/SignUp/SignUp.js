@@ -90,13 +90,13 @@ const SignUp = () => {
               <label className="label">
                 <span className="label-text">Full Name</span>
               </label>
-              <input type="text" name="name" placeholder="your name" className="input input-bordered" />
+              <input type="text" name="name" placeholder="your name" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Photo URL</span>
               </label>
-              <input type="text" name="photoURL" placeholder="photo URL" className="input input-bordered" />
+              <input type="text" name="photoURL" placeholder="photo URL" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
