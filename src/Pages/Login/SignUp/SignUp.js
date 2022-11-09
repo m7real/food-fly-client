@@ -8,7 +8,6 @@ import toast from "react-hot-toast";
 const SignUp = () => {
   const [error, setError] = useState("");
   const { setLoading, createUser, updateUserProfile, signInWithGoogle, logOut } = useContext(AuthContext);
-
   const navigate = useNavigate();
 
   useTitle("Sign Up");
