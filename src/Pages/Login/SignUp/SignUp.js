@@ -4,10 +4,11 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import useTitle from "../../../hooks/useTitle";
 import toast from "react-hot-toast";
+import Spinner from "../../Others/Spinner/Spinner";
 
 const SignUp = () => {
   const [error, setError] = useState("");
-  const { setLoading, createUser, updateUserProfile, signInWithGoogle, logOut } = useContext(AuthContext);
+  const { loading, setLoading, createUser, updateUserProfile, signInWithGoogle, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useTitle("Sign Up");
@@ -71,6 +72,11 @@ const SignUp = () => {
         setLoading(false);
       });
   };
+
+  // will show spinner while updating user state
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
 
   return (
     <div className="hero min-h-screen bg-base-100">

@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
 import useTitle from "../../../hooks/useTitle";
-import { Dna } from "react-loader-spinner";
+import Spinner from "../../Others/Spinner/Spinner";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -57,11 +57,7 @@ const Login = () => {
   };
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <Dna visible={true} height="60" width="60" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper" />
-      </div>
-    );
+    return <Spinner></Spinner>;
   }
 
   return (

@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Dna } from "react-loader-spinner";
 import ServiceCard from "../ServiceCard/ServiceCard";
+import Spinner from "../../Others/Spinner/Spinner";
 
 const Services = () => {
   const services = useLoaderData();
-  console.log(services);
+  const [loading, setLoading] = useState(true);
 
-  // if (fetching) {
-  //   return <Dna visible={true} height="48" width="48" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper" />;
-  // }
+  useEffect(() => {
+    if (services?.length > 0) {
+      setLoading(false);
+    }
+  }, [services]);
+
+  // will show spinner while fetching data
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
 
   return (
     <div className=" mx-10 my-10">
