@@ -28,6 +28,15 @@ const Header = () => {
           Blog
         </Link>
       </li>
+      {user?.uid && (
+        <>
+          <li>
+            <Link className="font-semibold" to="/addService">
+              Add Service
+            </Link>
+          </li>
+        </>
+      )}
     </>
   );
 

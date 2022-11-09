@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { Dna } from "react-loader-spinner";
 import ServiceCard from "../ServiceCard/ServiceCard";
 
 const Services = () => {
   const services = useLoaderData();
   console.log(services);
+
+  // if (fetching) {
+  //   return <Dna visible={true} height="48" width="48" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper" />;
+  // }
 
   return (
     <div className=" mx-10 my-10">
