@@ -1,8 +1,8 @@
 import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 
-const MyReviewCard = ({ review }) => {
-  const { service_name, review_text, last_modified } = review;
+const MyReviewCard = ({ review, handleDeleteReview, handleUpdateReview }) => {
+  const { _id, service_name, review_text, last_modified } = review;
   const date = new Date(last_modified);
   const time = date.toLocaleTimeString();
   const dateString = date.toDateString();
@@ -26,10 +26,10 @@ const MyReviewCard = ({ review }) => {
         <span className="text-sm mx-5">{dateString}</span>
       </div>
       <div className="flex justify-end items-center  mt-3">
-        <button className="btn btn-ghost">
+        <button onClick={() => handleDeleteReview(_id)} className="btn btn-ghost">
           <FaTrashAlt />
         </button>
-        <button className="btn btn-outline btn-xs normal-case md:mr-5">Update</button>
+        <button className="btn btn-outline btn-xs normal-case ml-2 md:mr-5">Update</button>
       </div>
     </div>
   );
