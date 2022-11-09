@@ -56,12 +56,13 @@ const Header = () => {
         <Link className="btn btn-ghost" to="/">
           <img className=" rounded-xl w-8" src={logo} alt="" />
         </Link>
-        <span className="text-xl font-semibold">Food Fly</span>
+        <span className="hidden md:block text-xl font-semibold">Food Fly</span>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
+        <span className="md:hidden absolute right-1/2 font-semibold">Food Fly</span>
         {loading ? (
           <Dna visible={true} height="48" width="48" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper" />
         ) : (

@@ -4,10 +4,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
 import useTitle from "../../../hooks/useTitle";
+import { Dna } from "react-loader-spinner";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { setLoading, signInWithGoogle, logIn } = useContext(AuthContext);
+  const { loading, setLoading, signInWithGoogle, logIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -47,13 +48,21 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => console.error(error))
       .finally(() => {
         setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <Dna visible={true} height="60" width="60" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper" />
+      </div>
+    );
+  }
 
   return (
     <div className="hero min-h-screen bg-base-100">
