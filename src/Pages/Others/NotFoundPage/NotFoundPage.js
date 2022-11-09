@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cover from "../../../assets/notFound/notfound.png";
+import useTitle from "../../../hooks/useTitle";
 
 // this page will be shown on a 404 not found route
 
 const NotFoundPage = () => {
+  useTitle("404");
+
   return (
     <div className="not-found text-center flex flex-col items-center justify-center min-h-screen">
       <img className="w-96" src={cover} alt="" />

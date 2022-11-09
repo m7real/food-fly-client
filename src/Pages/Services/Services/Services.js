@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import Spinner from "../../Others/Spinner/Spinner";
+import useTitle from "../../../hooks/useTitle";
 
 const Services = () => {
+  useTitle("Services");
   const services = useLoaderData();
   const [loading, setLoading] = useState(true);
 
