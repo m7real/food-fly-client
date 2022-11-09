@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../../../hooks/useTitle";
 import ServiceCard from "../../Services/ServiceCard/ServiceCard";
 import Banner from "../Banner/Banner";
@@ -17,6 +17,11 @@ const Home = () => {
           {services.map((service) => (
             <ServiceCard key={service._id} service={service}></ServiceCard>
           ))}
+        </div>
+        <div className="my-8 flex justify-end">
+          <Link to="/services" className="btn btn-outline normal-case btn-wide justify">
+            See All
+          </Link>
         </div>
       </div>
     </div>

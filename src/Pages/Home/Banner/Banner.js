@@ -3,7 +3,7 @@ import bannerImg from "../../../assets/banner/banner.jpg";
 
 function Banner() {
   return (
-    <div className="flex justify-end items-center ">
+    <div className="flex justify-end items-center">
       <img className=" object-cover brightness-50  w-full h-56 lg:h-96" src={bannerImg} alt="background" />
       <div className=" flex xl:px-20 justify-start items-start flex-col absolute">
         <h1 className="text0-xl xl:text-2xl font-medium leading-5 xl:leading-normal text-white">Home Made Healthy Food</h1>
