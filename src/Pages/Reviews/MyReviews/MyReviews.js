@@ -10,7 +10,7 @@ const MyReviews = () => {
   useTitle("My Reviews");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+    fetch(`https://assignment-11-server-swart.vercel.app/reviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("foodFly-token")}`,
       },
@@ -28,7 +28,7 @@ const MyReviews = () => {
   const handleDeleteReview = (id) => {
     const proceed = window.confirm("Are you sure, you want to cancel this order?");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://assignment-11-server-swart.vercel.app/reviews/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("foodFly-token")}`,

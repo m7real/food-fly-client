@@ -34,7 +34,7 @@ const Login = () => {
         };
         console.log(user);
         // get jwt token
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://assignment-11-server-swart.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -74,7 +74,7 @@ const Login = () => {
         };
         console.log(user);
         // get jwt token
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://assignment-11-server-swart.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

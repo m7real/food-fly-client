@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../../../hooks/useTitle";
+import FAQ from "../../FAQ/FAQ/FAQ";
 import ServiceCard from "../../Services/ServiceCard/ServiceCard";
 import Banner from "../Banner/Banner";
 
@@ -24,6 +25,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      <FAQ></FAQ>
     </div>
   );
 };

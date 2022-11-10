@@ -8,7 +8,7 @@ const Reviews = ({ service }) => {
   const { _id: serviceId, name: serviceName } = service;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${serviceId}`)
+    fetch(`https://assignment-11-server-swart.vercel.app/reviews/${serviceId}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -28,7 +28,7 @@ const Reviews = ({ service }) => {
       service_id: serviceId,
       service_name: serviceName,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://assignment-11-server-swart.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

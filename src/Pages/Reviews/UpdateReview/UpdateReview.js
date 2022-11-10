@@ -11,7 +11,7 @@ const UpdateReview = () => {
     event.preventDefault();
     const reviewText = event.target.reviewText.value;
 
-    fetch(`http://localhost:5000/reviews/${review._id}`, {
+    fetch(`https://assignment-11-server-swart.vercel.app/reviews/${review._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

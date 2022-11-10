@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/services?count=3"),
+        loader: () => fetch("https://assignment-11-server-swart.vercel.app/services?count=3"),
       },
       {
         path: "/login",
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () => fetch("https://assignment-11-server-swart.vercel.app/services"),
       },
       {
         path: "/addService",
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+        loader: ({ params }) => fetch(`https://assignment-11-server-swart.vercel.app/services/${params.id}`),
       },
       {
         path: "/myReviews",
@@ -63,12 +63,12 @@ const router = createBrowserRouter([
             <UpdateReview></UpdateReview>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/reviewById/${params.id}`),
+        loader: ({ params }) => fetch(`https://assignment-11-server-swart.vercel.app/reviewById/${params.id}`),
       },
       {
         path: "/blog",
         element: <Blog></Blog>,
-        loader: () => fetch("http://localhost:5000/blog"),
+        loader: () => fetch("https://assignment-11-server-swart.vercel.app/blog"),
       },
     ],
   },
