@@ -43,14 +43,12 @@ const Login = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             // local storage is the not the best place to store jwt token
             localStorage.setItem("foodFly-token", data.token);
             form.reset();
             toast.success("Login Successful!");
             setError("");
             navigate(from, { replace: true });
-            // setRedirecting(false);
           });
       })
       .catch((e) => {

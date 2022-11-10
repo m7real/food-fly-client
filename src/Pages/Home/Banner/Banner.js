@@ -8,7 +8,7 @@ function Banner() {
       <div className="mr-4 flex xl:px-20 justify-start items-start flex-col absolute">
         <h1 className="text-xl xl:text-4xl font-semibold leading-5 text-white">Welcome to Food Fly</h1>
         <p className="w-44 sm:w-64 lg:w-2/3 mt-4 text-base leading-6 xl:leading-5 text-white">
-          I am providing the best food delivery service in the town. Taking your food to your doorstep.
+          I am providing the fastest food delivery service in the town. Taking your food to your doorstep.
         </p>
       </div>
     </div>

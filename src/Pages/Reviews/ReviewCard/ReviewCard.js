@@ -10,7 +10,7 @@ const ReviewCard = ({ review }) => {
     <div className="card max-w-sm md:max-w-lg lg:max-w-[60%] mx-auto my-8 md:my-12 bg-base-100 shadow-xl p-8">
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center justify-start">
-          <img className="mr-3 w-10 rounded-full" src={img} alt="" />
+          <img className="mr-3 w-10 h-10 rounded-full" src={img} alt="" />
           <span className="font-semibold">{name}</span>
         </div>
         <div className="hidden md:block">
