@@ -12,7 +12,7 @@ const Coverage = () => {
         <MdOutlineDeliveryDining />
       </h2>
       <p className="mt-4 mb-7">
-        Right now I am providing delivery service <br /> only in these locations inside Dhaka
+        Right now I am providing delivery service <br /> in these locations only.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  ">
         {areas.map((area, idx) => (

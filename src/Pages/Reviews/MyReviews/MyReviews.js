@@ -26,7 +26,7 @@ const MyReviews = () => {
   }, [user?.email, logOut]);
 
   const handleDeleteReview = (id) => {
-    const proceed = window.confirm("Are you sure, you want to cancel this order?");
+    const proceed = window.confirm("Are you sure, you want to delete this review?");
     if (proceed) {
       fetch(`https://assignment-11-server-swart.vercel.app/reviews/${id}`, {
         method: "DELETE",
@@ -38,7 +38,7 @@ const MyReviews = () => {
         .then((data) => {
           // console.log(data);
           if (data.deletedCount > 0) {
-            toast.success("Order Removed");
+            toast.success("Review Deleted");
             const remaining = reviews.filter((review) => review._id !== id);
             setReviews(remaining);
           }
