@@ -37,10 +37,6 @@ const MyReviews = () => {
     }
   };
 
-  const handleUpdateReview = (event, id) => {
-    console.log(event, id);
-  };
-
   if (reviews.length === 0) {
     return (
       <div className="flex items-center justify-center min-h-[90vh]">
@@ -58,7 +54,6 @@ const MyReviews = () => {
           key={review._id}
           review={review}
           handleDeleteReview={handleDeleteReview}
-          handleUpdateReview={handleUpdateReview}
         ></MyReviewCard>
       ))}
     </div>

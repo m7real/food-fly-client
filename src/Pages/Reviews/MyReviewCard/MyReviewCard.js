@@ -1,7 +1,8 @@
 import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const MyReviewCard = ({ review, handleDeleteReview, handleUpdateReview }) => {
+const MyReviewCard = ({ review, handleDeleteReview }) => {
   const { _id, service_name, review_text, last_modified } = review;
   const date = new Date(last_modified);
   const time = date.toLocaleTimeString();
@@ -29,7 +30,9 @@ const MyReviewCard = ({ review, handleDeleteReview, handleUpdateReview }) => {
         <button onClick={() => handleDeleteReview(_id)} className="btn btn-ghost">
           <FaTrashAlt />
         </button>
-        <button className="btn btn-outline btn-xs normal-case ml-2 md:mr-5">Update</button>
+        <Link to={`/updateReview/${_id}`} className="btn btn-outline btn-xs normal-case ml-2 md:mr-5">
+          Update
+        </Link>
       </div>
     </div>
   );
