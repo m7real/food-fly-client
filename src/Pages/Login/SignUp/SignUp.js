@@ -8,7 +8,10 @@ import Spinner from "../../Others/Spinner/Spinner";
 
 const SignUp = () => {
   const [error, setError] = useState("");
+  // redirecting state to prevent re-render signUp form between successful signUp and Redirection to login page
+  const [redirecting, setRedirecting] = useState(false);
   const { loading, setLoading, createUser, updateUserProfile, signInWithGoogle, logOut } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   useTitle("Sign Up");
@@ -27,6 +30,7 @@ const SignUp = () => {
         console.log(user);
         form.reset();
         toast.success("Registration Successful!");
+        setRedirecting(true);
         handleUpdateUserProfile(name, photoURL);
       })
       .catch((e) => {
@@ -47,16 +51,19 @@ const SignUp = () => {
     };
     updateUserProfile(profile)
       .then(() => {
+        setLoading(true);
         toast.success("You will be redirected to the login page");
         logOut()
           .then(() => {
-            setTimeout(() => {
-              navigate("/login");
-            }, 1000);
+            navigate("/login");
+            setRedirecting(false);
           })
           .catch((e) => console.error(e));
       })
-      .catch((e) => console.error(e));
+      .catch((e) => console.error(e))
+      .finally(() => {
+        setRedirecting(false);
+      });
   };
 
   // sign in with google
@@ -91,8 +98,8 @@ const SignUp = () => {
       });
   };
 
-  // will show spinner while updating user state
-  if (loading) {
+  // will show spinner while updating user state or redirecting after signUp
+  if (loading || redirecting) {
     return <Spinner></Spinner>;
   }
 

@@ -8,6 +8,8 @@ import Spinner from "../../Others/Spinner/Spinner";
 
 const Login = () => {
   const [error, setError] = useState("");
+  // redirecting state to prevent re-render login form between successful login and Redirection to any other page
+  const [redirecting, setRedirecting] = useState(false);
   const { loading, setLoading, signInWithGoogle, logIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -18,6 +20,7 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (event) => {
+    setRedirecting(true);
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -47,12 +50,14 @@ const Login = () => {
             toast.success("Login Successful!");
             setError("");
             navigate(from, { replace: true });
+            // setRedirecting(false);
           });
       })
       .catch((e) => {
         console.error(e);
         setError(e.message);
         toast.error(e.message);
+        setRedirecting(false);
       })
       .finally(() => {
         setLoading(false);
@@ -90,8 +95,8 @@ const Login = () => {
         setLoading(false);
       });
   };
-
-  if (loading) {
+  // will show spinner while updating user state or redirecting after logIn
+  if (loading || redirecting) {
     return <Spinner></Spinner>;
   }
 
