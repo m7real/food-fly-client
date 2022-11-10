@@ -1,11 +1,13 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 import SingleBlogItem from "../SingleBlogItem/SingleBlogItem";
 
 // this is the container component for the blogs
 
 const Blog = () => {
   const blogs = useLoaderData();
+  useTitle("Blog");
 
   return (
     <div>

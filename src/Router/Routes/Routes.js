@@ -5,6 +5,7 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/Login/SignUp/SignUp";
 import NotFoundPage from "../../Pages/Others/NotFoundPage/NotFoundPage";
+import ScrollToTop from "../../Pages/Others/ScrollToTop/ScrollToTop";
 import MyReviews from "../../Pages/Reviews/MyReviews/MyReviews";
 import UpdateReview from "../../Pages/Reviews/UpdateReview/UpdateReview";
 import AddService from "../../Pages/Services/AddService/AddService";
@@ -15,7 +16,12 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    // wrapper used so that previous scroll resets on new route
+    element: (
+      <ScrollToTop>
+        <Main></Main>
+      </ScrollToTop>
+    ),
     children: [
       {
         path: "/",

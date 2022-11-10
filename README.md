@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Food Fly
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Website: [https://assignment-11-92c3b.web.app/](https://assignment-11-92c3b.web.app/)
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- This is a Personal Food Delivery service website that provides home delivery service.
+- Users can see and add honest review on the services.
+- Users can create account, log in to use all the features of the website.
+- If there is any error while logging in or signing up, it will be showed to the user with hot toast.
+- There is a services page where users can see all the services.
+- Logged in users can add new services, see his reviews, delete or update his reviews.
+- Reviews are sorted in a descending order to make sure the latest reviews show up to the top of the list.
+- React Photo View package used so that clicking on any image of service card will show the image in full screen.
+- Log in will redirect the user to the homepage or the protected route he tried to access previously.
+- JWT Token & MongoDB used in the backend of this project for implementing CRUD Operations from the front end.
+- React Router has been used to make it a Single Page Application.
+- There is a blog page where you can get some simple blog.
+- A FAQ section used along with accordion to serve some frequently asked questions.
+- There is a 404 not found page added to handle unrecognized routes.
+- ### Technologies, Frameworks or Libraries used in this project-
+  - React
+  - React Router
+  - Firebase (for authentication)
+  - Tailwind CSS
+  - Daisy UI
+  - React Hot Toast
+  - React Photo View
+  - React Icons
+  - React Loader Spinner
