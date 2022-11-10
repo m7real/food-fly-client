@@ -128,9 +128,6 @@ const Login = () => {
               <Link to="/signup" className="label-text-alt link link-hover">
                 New to the site? <span className="text-success">Sign Up</span>
               </Link>
-              {/* <Link to="/register" state={{ from: location.state?.from }} replace className="label-text-alt link link-hover">
-                New to the site? <span className="text-success">Register Here</span>
-              </Link> */}
             </label>
           </form>
         </div>
