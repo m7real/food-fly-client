@@ -3,6 +3,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import { Dna } from "react-loader-spinner";
 
+// only give access to logged in user
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
 

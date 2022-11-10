@@ -7,6 +7,7 @@ const UpdateReview = () => {
   const review = useLoaderData();
   useTitle("Update Review");
 
+  // update a review
   const handleUpdateReview = (event) => {
     event.preventDefault();
     const reviewText = event.target.reviewText.value;

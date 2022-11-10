@@ -7,6 +7,7 @@ const Reviews = ({ service }) => {
   const [reviews, setReviews] = useState([]);
   const { _id: serviceId, name: serviceName } = service;
 
+  // getting reviews for a specific service
   useEffect(() => {
     fetch(`https://assignment-11-server-swart.vercel.app/reviews/${serviceId}`)
       .then((res) => res.json())
@@ -15,7 +16,7 @@ const Reviews = ({ service }) => {
       });
   }, [serviceId]);
 
-  // id, name, img, review_text, email, service_id, service_name, last_modified
+  // add new review
   const handleAddReview = (event, user) => {
     event.preventDefault();
     const form = event.target;
@@ -38,7 +39,6 @@ const Reviews = ({ service }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data?.result?.acknowledged) {
           const updatedReviews = [data.review, ...reviews];
           setReviews(updatedReviews);

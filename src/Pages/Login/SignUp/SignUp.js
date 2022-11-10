@@ -27,7 +27,6 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         form.reset();
         toast.success("Registration Successful!");
         setRedirecting(true);
@@ -71,7 +70,6 @@ const SignUp = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
         const currentUser = {
           email: user.email,
         };
@@ -86,7 +84,6 @@ const SignUp = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             // local storage is the not the best place to store jwt token
             localStorage.setItem("foodFly-token", data.token);
             navigate("/");

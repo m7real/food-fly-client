@@ -32,7 +32,7 @@ const Login = () => {
         const currentUser = {
           email: user.email,
         };
-        console.log(user);
+
         // get jwt token
         fetch("https://assignment-11-server-swart.vercel.app/jwt", {
           method: "POST",
@@ -70,7 +70,6 @@ const Login = () => {
         const currentUser = {
           email: user.email,
         };
-        console.log(user);
         // get jwt token
         fetch("https://assignment-11-server-swart.vercel.app/jwt", {
           method: "POST",
@@ -81,7 +80,6 @@ const Login = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             // local storage is the not the best place to store jwt token
             localStorage.setItem("foodFly-token", data.token);
 

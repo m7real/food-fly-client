@@ -9,6 +9,7 @@ const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
   useTitle("My Reviews");
 
+  // getting all reviews of the logged in user
   useEffect(() => {
     fetch(`https://assignment-11-server-swart.vercel.app/reviews?email=${user?.email}`, {
       headers: {
@@ -25,6 +26,7 @@ const MyReviews = () => {
       .then((data) => setReviews(data));
   }, [user?.email, logOut]);
 
+  // delete a review
   const handleDeleteReview = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete this review?");
     if (proceed) {
@@ -36,7 +38,6 @@ const MyReviews = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          // console.log(data);
           if (data.deletedCount > 0) {
             toast.success("Review Deleted");
             const remaining = reviews.filter((review) => review._id !== id);

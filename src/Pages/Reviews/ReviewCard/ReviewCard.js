@@ -2,6 +2,8 @@ import React from "react";
 
 const ReviewCard = ({ review }) => {
   const { name, img, review_text, last_modified } = review;
+
+  // converting Date to readable format
   const date = new Date(last_modified);
   const time = date.toLocaleTimeString();
   const dateString = date.toDateString();

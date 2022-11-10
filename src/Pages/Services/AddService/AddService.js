@@ -5,6 +5,7 @@ import useTitle from "../../../hooks/useTitle";
 const AddService = () => {
   useTitle("Add Service");
 
+  // add new service
   const handleAddService = (event) => {
     event.preventDefault();
 
@@ -31,7 +32,6 @@ const AddService = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data?.acknowledged) {
           toast.success("Successfully Added The Service");
           form.reset();
