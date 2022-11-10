@@ -15,7 +15,7 @@ const UpdateReview = () => {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
-        // authorization: `Bearer ${localStorage.getItem("foodFly-token")}`,
+        authorization: `Bearer ${localStorage.getItem("foodFly-token")}`,
       },
       body: JSON.stringify({ reviewText: reviewText }),
     })

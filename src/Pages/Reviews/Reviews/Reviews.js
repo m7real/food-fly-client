@@ -32,7 +32,7 @@ const Reviews = ({ service }) => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        // authorization: `Bearer ${localStorage.getItem("genius-token")}`,
+        authorization: `Bearer ${localStorage.getItem("foodFly-token")}`,
       },
       body: JSON.stringify(newReview),
     })
