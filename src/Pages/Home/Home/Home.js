@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <div className=" mx-10 my-10">
-        <h2 className="mb-10 text-4xl font-bold">Services:</h2>
+        <h2 className="mb-10 text-4xl font-bold">Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <ServiceCard key={service._id} service={service}></ServiceCard>

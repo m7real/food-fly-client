@@ -47,7 +47,7 @@ const MyReviews = () => {
 
   return (
     <div>
-      <h2>My Reviews:{reviews.length}</h2>
+      <h2 className="text-2xl font-semibold glass px-7 py-3 w-fit mx-auto mt-12 rounded-xl">All of My Reviews</h2>
       {reviews.map((review) => (
         <MyReviewCard
           // prettier-ignore
